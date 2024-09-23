@@ -31,18 +31,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Map<String, Map<String, String>> languages = await di.init();
 
-  if(GetPlatform.isAndroid) {
-    await Firebase.initializeApp(
-      options: const FirebaseOptions(
-        apiKey: "AIzaSyCic6Mw3RRPFcimXhwGidwhCN0tXY7HFFc",
-        appId: "1:1000163153346:android:9d8caf29b912e11606b25b",
-        messagingSenderId: "1000163153346",
-        projectId: "ammart-8885e",
-      ),
-    );
-  }else {
+
     await Firebase.initializeApp();
-  }
+  
 
   NotificationBody? body;
   try {
